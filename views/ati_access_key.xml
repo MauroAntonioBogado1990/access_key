@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+
+  <record id="ati_access_tree" model="ir.ui.view">
+        <field name="name">ati.access.tree</field>
+        <field name="model">access.keys</field>
+        <field name="arch" type="xml">
+          <tree string="Claves">
+              <field name="key_visibility" invisible="True"/>
+              <field name="client_name" attrs="{'invisible': [('key_visibility', '=', False)]}"/>
+               <field name="client_shh" attrs="{'invisible': [('key_visibility', '=', False)]}"/>
+               <field name="client_key" attrs="{'invisible': [('key_visibility', '=', False)]}"/>
+               <field name="client_port" attrs="{'invisible': [('key_visibility', '=', False)]}"/>
+               
+               <field name="client_user_ssh" attrs="{'invisible': [('key_visibility', '=', False)]}"/>
+               
+               <field name="client_host"  attrs="{'invisible': [('key_visibility', '=', False)]}"/>
+               
+               <field name="client_datebase"  attrs="{'invisible': [('key_visibility', '=', False)]}"/>
+               <field name="client_datebase_user"  attrs="{'invisible': [('key_visibility', '=', False)]}"/>
+               <field name="client_datebase_key"  attrs="{'invisible': [('key_visibility', '=', False)]}"/>
+               <field name="client_project"  attrs="{'invisible': [('key_visibility', '=', False)]}"/> 
+                <!-- <field name="usuario_entorno"  attrs="{'invisible': [('key_visibility', '=', True)]}"/> 
+              <field name="usuario_proyecto"  attrs="{'invisible': [('key_visibility', '=', True)]}"/>   -->
+          </tree>
+        </field>  
+   </record>
+
+
+   <record id="ati_access_form" model="ir.ui.view">
+        <field name="name">ati_access_form</field>
+        <field name="model">access.keys</field>
+        <field name="arch" type="xml">
+          <form string="Form View Name">
+               <sheet>
+                    <group>
+               <field name="key_visibility" invisible='True'/>
+              <field name="client_name"/>
+               <field name="client_shh" attrs="{'invisible': [('key_visibility', '=', False)]}"/>
+               <field name="client_key"/>
+               <field name="client_port"/>
+               
+               <field name="client_user_ssh"/>
+               
+               <field name="client_host"/>
+               
+               <field name="client_datebase"/>
+               <field name="client_datebase_user"/>
+               <field name="client_datebase_key"/>
+              <field name="client_project"/> 
+              <!-- <field name="usuario_entorno"/> 
+              <field name="usuario_proyecto"/>   -->
+    
+                    </group>
+               </sheet>
+               
+          </form>
+        </field>  
+   </record>
+
+
+
+
+   <record id="action_access" model='ir.actions.act_window'>
+     <field name="name">Credenciales</field>
+     <field name="res_model">access.keys</field>
+     <field name="view_mode">tree,form</field>
+   </record>
+   
+     <menuitem
+            action="action_access"    
+            id="action_access_key"
+            parent="project.menu_main_pm"
+            name="Credenciales"
+            sequence="7"/>  
+
+
+ 
+   
+</odoo>

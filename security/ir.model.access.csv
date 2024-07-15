@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+ati_access_key_model,ati.access.key.access.keys,model_access_keys,base.group_user,1,1,1,1

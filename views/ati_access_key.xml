@@ -7,6 +7,7 @@
         <field name="model">access.keys</field>
         <field name="arch" type="xml">
           <tree string="Claves">
+              <!-- Tiene como agregado esta linea para probar el commit de las ramas -->
               <field name="key_visibility" invisible="True"/>
               <field name="client_name" attrs="{'invisible': [('key_visibility', '=', False)]}"/>
                <field name="client_shh" attrs="{'invisible': [('key_visibility', '=', False)]}"/>
